@@ -28,7 +28,7 @@ func main() {
 	clientTunIP := flag.String("client-private", "2001:db8::2", "Client Private IP address")
 	subnetMask := flag.String("subnet", "64", "Subnet mask (e.g: 24 or 64)")
 	tunName := flag.String("device", "tun2", "TUN device name")
-	secretKey := flag.String("key", "azumi", "Secret key for authentication")
+	secretKey := flag.String("key", "saeideros", "Secret key for authentication")
 	mtu := flag.Int("mtu", 1480, "MTU for TUN device")
 	verbose := flag.Bool("verbose", false, "Enable logging")
 	useSmux := flag.Bool("smux", false, "Enable smux multiplexing")
