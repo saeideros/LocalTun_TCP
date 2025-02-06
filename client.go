@@ -10,13 +10,13 @@ import (
 	"time"
 	"github.com/sirupsen/logrus"
 	"github.com/songgao/water"
-	"github.com/Azumi67/LocalTun_TCP/client"
-	"github.com/Azumi67/LocalTun_TCP/smux_client"
-	"github.com/Azumi67/LocalTun_TCP/heartbeat_client"
-	"github.com/Azumi67/LocalTun_TCP/monitor_client"
-	"github.com/Azumi67/LocalTun_TCP/hash"
-	"github.com/Azumi67/LocalTun_TCP/tcp_no_delay_client"
-	"github.com/Azumi67/LocalTun_TCP/worker_client"
+	"github.com/saeideros/LocalTun_TCP/client"
+	"github.com/saeideros/LocalTun_TCP/smux_client"
+	"github.com/saeideros/LocalTun_TCP/heartbeat_client"
+	"github.com/saeideros/LocalTun_TCP/monitor_client"
+	"github.com/saeideros/LocalTun_TCP/hash"
+	"github.com/saeideros/LocalTun_TCP/tcp_no_delay_client"
+	"github.com/saeideros/LocalTun_TCP/worker_client"
 )
 
 var log = logrus.New()
@@ -28,7 +28,7 @@ func main() {
 	serverTunIP := flag.String("server-private", "2001:db8::1", "Server Private IP address")
 	subnetMask := flag.String("subnet", "64", "Subnet mask (e.g: 24 or 64)")
 	tunName := flag.String("device", "tun2", "TUN device name")
-	secretKey := flag.String("key", "azumi", "Secret key for authentication")
+	secretKey := flag.String("key", "saeideros", "Secret key for authentication")
 	mtu := flag.Int("mtu", 1480, "MTU for TUN device")
 	verbose := flag.Bool("verbose", false, "Enable logging")
 	useSmux := flag.Bool("smux", false, "Enable smux multiplexing")
@@ -36,7 +36,7 @@ func main() {
 	heartbeatInterval := flag.Int("heartbeat-interval", 30, "Heartbeat interval in seconds")
 	tcpNoDelay := flag.Bool("tcp-nodelay", false, "Enable TCP_NODELAY")
 	pingInterval := flag.Int("ping-interval", 10, "Ping interval in seconds")
-	serviceName := flag.String("service-name", "azumilocal", "name of the service to restart upon failure")
+	serviceName := flag.String("service-name", "saeideroslocal", "name of the service to restart upon failure")
 	workers := flag.Int("worker", runtime.NumCPU(), "number of workers or based on the number of CPU cores")
 
 	flag.Parse()
